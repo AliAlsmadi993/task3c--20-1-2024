@@ -112,19 +112,15 @@ class Program
         return common.ToArray();
     }
 
-    // Class and Object: Hotel Reservation System
-    class Room
-    {
-        public int RoomNumber { get; set; }
-        public string RoomType { get; set; }
-        public decimal PricePerNight { get; set; }
-        public bool IsBooked { get; set; }
-        public const string HotelName = "Grand Stay Hotel";
+ 
 
-        public void DisplayRoomInfo()
-        {
-            Console.WriteLine($"Room Number: {RoomNumber}, Room Type: {RoomType}, Price: {PricePerNight:C}, Is Booked: {IsBooked}, Hotel: {HotelName}");
-        }
+    public class hotel
+    {
+        public int roomNumber;//field
+        public string roomType;//field
+        public double price;//field
+        public bool isBooked;//field
+        public const string hotelName = "Hotel";//Constant
     }
 
     static void Main(string[] args)
@@ -207,24 +203,26 @@ class Program
         }
         Console.WriteLine($"Common elements: {string.Join(", ", FindCommonElements(array1.ToArray(), array2.ToArray()))}");
 
-        // Class and Object
-        Room room1 = new Room
-        {
-            RoomNumber = 101,
-            RoomType = "Single",
-            PricePerNight = 50.0m,
-            IsBooked = false
-        };
 
-        Room room2 = new Room
-        {
-            RoomNumber = 102,
-            RoomType = "Double",
-            PricePerNight = 75.0m,
-            IsBooked = true
-        };
 
-        room1.DisplayRoomInfo();
-        room2.DisplayRoomInfo();
+        hotel Room1 = new hotel();
+        Room1.roomNumber = Convert.ToInt32(Console.ReadLine());
+        Room1.roomType = Console.ReadLine();
+        Room1.price = Convert.ToDouble(Console.ReadLine());
+        Room1.isBooked = Convert.ToBoolean(Console.ReadLine());
+        //hotel.hotelName = Console.ReadLine();
+        Console.WriteLine($"{Room1.roomNumber} {Room1.roomType} {Room1.price} {Room1.isBooked} {hotel.hotelName}");
+        //---------------------------------------------
+        Console.WriteLine(hotel.hotelName);
+        hotel Room2 = new hotel();
+        Room2.roomNumber = Convert.ToInt32(Console.ReadLine());
+        Room2.roomType = Console.ReadLine();
+        Room2.price = Convert.ToDouble(Console.ReadLine());
+        Room2.isBooked = Convert.ToBoolean(Console.ReadLine());
+        //hotel.hotelName = Console.ReadLine();
+        Console.WriteLine(hotel.hotelName);
+        Console.WriteLine($"{Room2.roomNumber} {Room2.roomType} {Room2.price} {Room2.isBooked} {hotel.hotelName}");
+
+
     }
 }
